@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Fish_big : Fish
 {
-    //to know if we go right (1,1) or left (-1,1),     up (1,1) or down (1,-1)
     private Vector2 rightMove = new Vector2(1,1), upMove = new Vector2(1,1); 
     private Vector2 diagonalVector = new Vector2(0.5f, 0.5f); //diagonal move
     private bool leftMoving = false, upMoving = true;
