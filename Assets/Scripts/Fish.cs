@@ -6,7 +6,7 @@ public class Fish : MonoBehaviour
 {
     public int speed = 1;
     private bool leftMove = true;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     public void Start()
     {
@@ -19,11 +19,13 @@ public class Fish : MonoBehaviour
         {
             speed = -speed;
             leftMove = false;
+            transform.Rotate(0,180,0);
         }
         else if (transform.position.x > 8 && !leftMove)
         {
             speed = -speed;
             leftMove = true;
+            transform.Rotate(0,180,0);
         }
         rb.velocity = Vector2.left * speed;
         
