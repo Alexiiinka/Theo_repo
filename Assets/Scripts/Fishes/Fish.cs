@@ -5,15 +5,15 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     public int speed = 1;
-    private bool leftMove = true;
-    private Rigidbody2D rb;
+    protected bool leftMove = true;
+    protected Rigidbody2D rb;
 
-    public void Start()
+    public virtual void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
     }
 
-    protected void Move()
+    protected virtual void Move()
     {
         if (transform.position.x < -8 && leftMove)
         {
@@ -31,7 +31,7 @@ public class Fish : MonoBehaviour
         
     }
 
-    public void Update()
+    public virtual void FixedUpdate()
     {
         Move();
     }
