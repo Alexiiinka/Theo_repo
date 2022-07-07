@@ -12,27 +12,42 @@ public class Fish_big : Fish
     {
          if (transform.position.y < -4 && !upMoving) // goes down, we want up
         {
-            transform.Rotate(0, 0, 90);
+            if(leftMoving)
+            {
+                transform.Rotate(0, 0, -90);
+            }
+            else{
+                transform.Rotate(0, 0, 90);
+            }
+            
             upMoving = true;
             upMove = new Vector2(1, 1);
         }
         else if (transform.position.y > -1 && upMoving) // goes up, we want down
         {
-            transform.Rotate(0, 0, -90);
+            if(leftMoving)
+            {
+                transform.Rotate(0, 0, 90);
+            }
+            else{
+                transform.Rotate(0, 0, -90);
+            }
             upMoving = false;
             upMove = new Vector2(1, -1);
+            
         }
         if (transform.position.x < -8 && leftMoving) //goes left, we want right
         {
             rightMove = new Vector2(1,1);
             leftMoving = false;
-            transform.Rotate(0,180,0);
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y *-1, transform.localScale.z);
+            if(upMoving){transform.Rotate(0, 0, -180);}
         }
         else if (transform.position.x > 8 && !leftMoving) // goes right, we want left
         {
             rightMove = new Vector2(-1,1);
             leftMoving = true;
-            transform.Rotate(0,180,0);
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y *-1, transform.localScale.z);
         }
 
        
