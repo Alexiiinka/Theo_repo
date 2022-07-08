@@ -34,6 +34,12 @@ public class PlayerScript : MonoBehaviour
         if (other.CompareTag("Fishes"))
         {
             Destroy(other.gameObject);
+            GameMaster.Instance.GameOver();
+        }
+        else if(other.CompareTag("Garbage"))
+        {
+            Destroy(other.gameObject);
+            GameMaster.Instance.score += 1;
         }
         
     }

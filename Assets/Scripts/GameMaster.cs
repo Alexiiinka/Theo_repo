@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour
 {
     public static GameMaster Instance;
-    public string playerName;
+    public string playerName = "Mee";
+    public int score = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,6 +18,11 @@ public class GameMaster : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void GameOver()
+    {
+
     }
 
 }
