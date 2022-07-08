@@ -12,6 +12,14 @@ public class EnemyScript : MonoBehaviour
         rb.velocity = Vector2.down.normalized * speed;
     }
 
+    void Update()
+    {
+        if (transform.position.y < -5)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Fishes"))
