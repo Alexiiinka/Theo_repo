@@ -10,7 +10,7 @@ public class EnemySpawnManag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("MakeEnemy", 0.1f, repeatEnemyRate);
+        InvokeRepeating("MakeEnemy", 0.5f, repeatEnemyRate);
     }
 
     private void MakeEnemy()

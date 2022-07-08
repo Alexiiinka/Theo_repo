@@ -5,8 +5,9 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour
 {
     public static GameMaster Instance;
-    public string playerName = "Mee";
+    public string playerName = "";
     public int score = 0;
+    public bool gameOverr = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,7 +23,8 @@ public class GameMaster : MonoBehaviour
 
     public void GameOver()
     {
-
+        Time.timeScale = 0;
+        gameOverr = true;
     }
 
 }
